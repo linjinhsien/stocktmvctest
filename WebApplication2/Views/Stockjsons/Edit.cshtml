@@ -1,0 +1,58 @@
+﻿@model WebApplication2.Models.Stockjson
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Edit</title>
+</head>
+<body>
+
+<h4>Stockjson</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Code" />
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Peratio" class="control-label"></label>
+                <input asp-for="Peratio" class="form-control" />
+                <span asp-validation-for="Peratio" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DividendYield" class="control-label"></label>
+                <input asp-for="DividendYield" class="form-control" />
+                <span asp-validation-for="DividendYield" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Pbratio" class="control-label"></label>
+                <input asp-for="Pbratio" class="form-control" />
+                <span asp-validation-for="Pbratio" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+</body>
+</html>
