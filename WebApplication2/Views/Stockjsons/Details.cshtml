@@ -1,0 +1,42 @@
+﻿@model WebApplication2.Models.Stockjson
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Stockjson</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Peratio)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Peratio)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DividendYield)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DividendYield)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Pbratio)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Pbratio)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Code">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
