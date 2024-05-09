@@ -18,17 +18,20 @@
 <table class="table">
     <thead>
         <tr>
+                <th>
+                    股票代碼
+                </th>
             <th>
-                @Html.DisplayNameFor(model => model.Name)
+                股票名稱
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Peratio)
+                股價本益比
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.DividendYield)
+                股息殖利率
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Pbratio)
+                股價淨值比
             </th>
             <th></th>
         </tr>
@@ -36,6 +39,9 @@
     <tbody>
 @foreach (var item in Model) {
         <tr>
+            <td>
+                 @Html.DisplayFor(modelItem => item.Code)
+            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
