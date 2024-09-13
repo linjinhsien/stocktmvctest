@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -55,8 +56,8 @@ namespace WebApplication2.Controllers
             _context.Stockjsons.AddRange(stocks);
             await _context.SaveChangesAsync();
 
-            return Ok("資料已成功匯入");
-            return View(await _context.Stockjsons.ToListAsync());
+            return Json(new { message = "資料已成功匯入", redirectUrl = Url.Action("Index", "Stockjsons") });
+
         }
         // GET: Stockjsons
         public async Task<IActionResult> Index(int? page)
